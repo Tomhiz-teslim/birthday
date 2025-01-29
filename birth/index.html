@@ -1,49 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday, Smiley!</title>
-  <link rel="stylesheet" href="./styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Smiley!</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="intro">
-    <h1>🎉 Happy Birthday, Smiley! 🎉</h1>
-    <h2>You make the world a brighter, happier place. 🌟</h2>
-    <button id="startButton">Start the Celebration</button>
-  </div>
-
-  <div id="celebration" class="hidden">
-    <!-- Confetti Canvas -->
-    <canvas id="confetti"></canvas>
-
-    <!-- Floating Balloons -->
-    <div class="balloon-container">
-      <div class="balloon red"></div>
-      <div class="balloon yellow"></div>
-      <div class="balloon blue"></div>
+    <div class="container">
+        <h1 class="title">🎉 Happy Birthday, Smiley! 🎉</h1>
+        <p class="subtitle">Wishing you endless happiness, joy, and love on your special day!</p>
+        <div class="buttons">
+            <button onclick="startFireworks()">Fireworks 🎆</button>
+            <button onclick="releaseBalloons()">Balloons 🎈</button>
+            <button onclick="sparkleEffect()">Sparkles ✨</button>
+            <button onclick="playSong()">Play Song 🎵</button>
+        </div>
     </div>
-
-    <!-- Birthday Message -->
-    <div class="message">
-      <h1>Smiley, You're Amazing! 💖</h1>
-      <p>Here's to another year of spreading love and laughter!</p>
-    </div>
-
-    <!-- Animated Gift Section -->
-    <div id="giftSection">
-      <div id="giftBox" onclick="openGift()">
-        🎁
-      </div>
-      <div id="giftMessage" class="hidden">
-        <h2>Surprise! 🎊</h2>
-        <p>
-          Smiley, you are a true gem—kind, brilliant, and one of a kind. Here's to celebrating YOU today and always!
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <script src="./script.js"></script>
+    <canvas id="effectCanvas"></canvas>
+    <audio id="birthdaySong" src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3"></audio>
+    <script src="script.js"></script>
 </body>
 </html>
