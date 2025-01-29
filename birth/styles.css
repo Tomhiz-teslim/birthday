@@ -1,134 +1,77 @@
-/* General Styles */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
-  color: #fff;
-  text-align: center;
-  overflow-x: hidden;
-  height: 100vh;
-}
-
-h1, h2, p {
-  margin: 0.5em 0;
-}
-
-/* Intro Section */
-#intro {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffdde1);
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #ffe29f, #ffa99f);
-  animation: fadeIn 2s ease-in-out;
+  overflow: hidden;
+  color: #fff;
 }
 
-#startButton {
-  padding: 10px 20px;
-  background: #fff;
-  color: #ff6f61;
+.container {
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}
+
+.title {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  margin: 10px 0 30px;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 15px;
   border: none;
-  font-size: 1.5rem;
-  border-radius: 10px;
+  border-radius: 8px;
+  background: #ff6f61;
+  color: white;
+  font-size: 14px;
   cursor: pointer;
-  animation: pulse 1.5s infinite;
+  transition: all 0.3s ease;
 }
 
+button:hover {
+  background: #ff3b3b;
+  transform: scale(1.1);
+}
+
+/* Canvas Fullscreen */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Animations */
 @keyframes fadeIn {
   from {
-    opacity: 0;
+      opacity: 0;
+      transform: translateY(-20px);
   }
   to {
-    opacity: 1;
+      opacity: 1;
+      transform: translateY(0);
   }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-/* Celebration Section */
-.hidden {
-  display: none;
-}
-
-#celebration {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to top, #ff9a9e, #fad0c4);
-
-}
-
-.message {
-  margin-top: 20px;
-  font-size: 1.5rem;
-  animation: slideIn 2s ease-in-out;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Balloons */
-.balloon-container {
-  position: relative;
-  width: 100%;
-  height: 50vh;
-}
-
-.balloon {
-  position: absolute;
-  width: 50px;
-  height: 70px;
-  background-color: red;
-  border-radius: 50%;
-  animation: float 6s infinite ease-in-out;
-}
-
-.balloon.red { background-color: #f28b82; left: 10%; animation-delay: 1s; }
-.balloon.yellow { background-color: #fdd663; left: 50%; animation-delay: 2s; }
-.balloon.blue { background-color: #aecbfa; left: 80%; animation-delay: 3s; }
-
-@keyframes float {
-  0% { transform: translateY(100%); }
-  100% { transform: translateY(-100%); }
-}
-
-/* Gift Section */
-#giftSection {
-  margin-top: 20px;
-  position: relative;
-}
-
-#giftBox {
-  font-size: 5rem;
-  cursor: pointer;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-#giftMessage {
-  margin-top: 20px;
-  font-size: 1.5rem;
 }
